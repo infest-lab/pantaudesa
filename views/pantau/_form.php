@@ -77,7 +77,7 @@ use app\models\Provinsi;
             <label for="" class="control-label">Masukan Url API</label>
             <input type="text" value="" placeholder="contoh http://mitradesa.id" class="form-control">
            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-click="ringkasan()">
               Cek
             </button>
 
@@ -94,12 +94,6 @@ use app\models\Provinsi;
 
     <?php ActiveForm::end(); ?>
 
-</div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog  modal-lg" role="document">
@@ -108,8 +102,8 @@ use app\models\Provinsi;
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Ringkasan Keuangan Desa</h4>
       </div>
-      <div class="modal-body">
-        
+      <div class="modal-body" id="content-tinjau">
+                  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
@@ -118,7 +112,9 @@ use app\models\Provinsi;
     </div>
   </div>
 </div>
+</div>
 <?php 
     echo $this->registerJsFile('/js/angular.min.js');
     echo $this->registerJsFile('/js/wilayah.js'); 
+    echo $this->registerJsFile('/js/ringkasan.js'); 
  ?>

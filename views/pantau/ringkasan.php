@@ -1,16 +1,17 @@
- <div>
+ <?php 
+
+  ?>
+ <div id="tab-panel"  >
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+          <?php foreach($tahun->tahun as $key => $th):  ?>
+            <li role="presentation" ng-click="selectTahun(<?php echo $th ?>)" class="<?php echo $key == 0 ? "active" : ""; ?>"><a href="#<?php $key ?>" aria-controls="<?php echo $key ?>" role="tab" data-toggle="tab"><?php echo $th ?></a></li>
+          <?php endforeach; ?>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="home">...</div>
-          <div role="tabpanel" class="tab-pane" id="profile">...</div>
-          <div role="tabpanel" class="tab-pane" id="messages">...</div>
-          <div role="tabpanel" class="tab-pane" id="settings">...</div>
+          <div role="tabpanel" class="tab-pane active" >
+              {{tahun}}
+          </div>
         </div>
   </div>

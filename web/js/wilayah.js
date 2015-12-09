@@ -60,6 +60,17 @@ app.controller('Wilayah',function($scope,$http){
 			break;
 		}
 	}
+	$scope.ringkasan = function(){
 
+		$http.get(site_url+'/pantau/tinjau', {}).then(function(data){
+			jQuery('#content-tinjau').html(data.data)
+			angular.bootstrap(jQuery("#tab-panel"), ["ModuleRingkasan"]);
+		}, function(error){
+
+		});
+	}
+	$scope.selectTahun = function(tahun){
+		console.log(tahun)
+	}
 
 })

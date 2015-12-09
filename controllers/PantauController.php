@@ -8,6 +8,7 @@ use app\models\SearchPantau;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use linslin\yii2\curl;
 
 /**
  * PantauController implements the CRUD actions for Pantau model.
@@ -100,6 +101,18 @@ class PantauController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionTinjau(){
+        $curl = new curl\Curl();
+        $response = $curl->get('http://localhost/lumbungku/index.php/api/keuangan/tahun');
+        return $this->renderPartial('ringkasan',['tahun'=>json_decode($response)]);
+    }
+
+    public function actionGetRingkasan($tahun){
+        $curl = new curl\Curl();
+        $response = $curl->get('http://localhost/lumbungku/index.php/api/keuangan/ringkasan/tahun/2015');
+        return $this->renderPartial('ringkasan_keuangan',['ringkasan'=> json_decode($response)], true, true);
     }
 
     /**

@@ -19,12 +19,12 @@ class UploadBerkasController extends \yii\web\Controller
          $model = new UploadForm();
          \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
          if ( Yii::$app->request->isAjax && Yii::$app->request->isPost) {
-            /*$model->imageFile = UploadedFile::getInstanceByName('file');
+            $model->imageFile = UploadedFile::getInstanceByName('file');
             if ($model->upload()) {
-                echo "jos";
+                echo json_encode(['test'=> 'hae']);
                 return;
-            }*/
-            echo "hae";
+            }
+            echo json_encode($model->getErrors());
             exit();
         }
     }

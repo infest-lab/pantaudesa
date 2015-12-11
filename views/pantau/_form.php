@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Provinsi;
+use dosamigos\fileupload\FileUploadUI;
 /* @var $this yii\web\View */
 /* @var $model app\models\Pantau */
 /* @var $form yii\widgets\ActiveForm */
@@ -83,16 +84,39 @@ use app\models\Provinsi;
 
         </div>
     </div>
+
+    <?php ActiveForm::end(); ?>
     <div class="{{viaupload}}">
         <?= $form->field($model, 'periode') ?>
         <?= $form->field($model, 'tahun') ?>
+        
+      <?= FileUploadUI::widget([
+   
+          'name' => 'file',
+          'url' => ['upload-berkas/upload'], // your url, this is just for demo purposes,
+          'options' => ['accept' => '*'],
+          'clientOptions' => [
+              'maxFileSize' => 2000000
+          ],
+          // Also, you can specify jQuery-File-Upload events
+          // see: https://github.com/blueimp/jQuery-File-Upload/wiki/Options#processing-callback-options
+          'clientEvents' => [
+              'fileuploaddone' => 'function(e, data) {
+                                      console.log(e);
+                                      console.log(data);
+                                  }',
+              'fileuploadfail' => 'function(e, data) {
+                                      console.log(e);
+                                      console.log(data);
+                                  }',
+          ],
+          ]);?>
     </div>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

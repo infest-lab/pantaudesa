@@ -20,8 +20,12 @@
         "yiisoft/yii2-swiftmailer": "*",
         "mdmsoft/yii2-admin": "~2.0",
         "2amigos/yii2-file-upload-widget": "~1.0",
-	"yiisoft/yii2-mongodb": "^2.0",
-        "linslin/yii2-curl": "*"
+	    "yiisoft/yii2-mongodb": "^2.0",
+        "linslin/yii2-curl": "*",
+        "bower-asset/angular": ">=1.4.8",
+        "bower-asset/blueimp-file-upload": "~9.11.2",
+        "bower-asset/blueimp-canvas-to-blob": "~2.2.2",
+        "bower-asset/blueimp-gallery": "~2.16.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

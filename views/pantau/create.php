@@ -9,6 +9,8 @@ use yii\helpers\Html;
 $this->title = 'Create Pantau';
 $this->params['breadcrumbs'][] = ['label' => 'Pantaus', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+app\assets\AngularAsset::register($this);
 ?>
 <div class="pantau-create">
 

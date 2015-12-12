@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Contact';
+$this->title = 'Hubungi Kami';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
         <div class="alert alert-success">
-            Thank you for contacting us. We will respond to you as soon as possible.
-        </div>
+            Terimakasih telah menghubungi kami. Kami akan segera meresponnya segera.
+        </div>       
 
         <p>
             Note that if you turn on the Yii debugger, you should be able
@@ -32,37 +32,56 @@ $this->params['breadcrumbs'][] = $this->title;
         </p>
 
     <?php else: ?>
-
-        <p>
-            If you have business inquiries or other questions, please fill out the following form to contact us.
-            Thank you.
-        </p>
-
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-md-6">
+                <address>
+                  <strong>Pantau Desa.</strong><br>
+                  Infest Yogyakarta<br>
+                  Jl. Veteran Gg. Janur Kuning No. 11A<br>
+                  Umbulharjo, Yogyakarta, DIY, Indonesia
+                  <abbr title="Phone">P:</abbr> (0274) 372-378
+                </address>
 
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                <address>
+                  <strong>INFEST</strong><br>
+                  <a href="mailto:#">info@infest.or.id</a>
+                </address>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Jika anda mempunyai pertanyaan lain yang berhubungan dengan Pantau Desa, silakan mengisi isian form di bawah ini untuk terhubung dengan kami.
+                    Terimakasih.
+                </p>
 
-                    <?= $form->field($model, 'name') ?>
+                <div class="row">
+                    <div class="col-md-12">
 
-                    <?= $form->field($model, 'email') ?>
+                        <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-                    <?= $form->field($model, 'subject') ?>
+                            <?= $form->field($model, 'name') ?>
 
-                    <?= $form->field($model, 'body')->textArea(['rows' => 6]) ?>
+                            <?= $form->field($model, 'email') ?>
 
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                    ]) ?>
+                            <?= $form->field($model, 'subject') ?>
 
-                    <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                            <?= $form->field($model, 'body')->textArea(['rows' => 6]) ?>
+
+                            <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                                'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                            ]) ?>
+
+                            <div class="form-group">
+                                <?= Html::submitButton('Kirim', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                            </div>
+
+                        <?php ActiveForm::end(); ?>
+
                     </div>
-
-                <?php ActiveForm::end(); ?>
-
+                </div>
             </div>
         </div>
+        
+        
 
     <?php endif; ?>
 </div>

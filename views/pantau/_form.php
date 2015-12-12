@@ -5,9 +5,12 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Provinsi;
 use dosamigos\fileupload\FileUploadUI;
+use app\assets\AngularAsset;
 /* @var $this yii\web\View */
 /* @var $model app\models\Pantau */
 /* @var $form yii\widgets\ActiveForm */
+
+//app\assets\AngularAsset::register($this);
 ?>
 
 <div class="pantau-form" ng-app="ModuleWilayah" ng-controller="Wilayah">
@@ -138,7 +141,11 @@ use dosamigos\fileupload\FileUploadUI;
 </div>
 </div>
 <?php 
-    echo $this->registerJsFile('/js/angular.min.js');
+    //echo $this->registerJsFile('/js/angular.min.js');
+    //echo $this->registerJsFile('@bower/angularjs/angular.min.js');
+    //app\assets\AppAsset::publish('@bower/angularjs/angular.min.js');
+    //echo Yii::getAlias('@bower');    
+    
     echo $this->registerJsFile('/js/wilayah.js'); 
     echo $this->registerJsFile('/js/ringkasan.js'); 
  ?>

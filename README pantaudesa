@@ -2,9 +2,6 @@
 2. apt-get install php5-dev php5-pear
 3. pecl install mongodb
 4. Edit /etc/php5/cli/php.ini tambahkan extension=mongo.so
-5. composer update
-6. bower install jquery
-7. boser install bootstrap
-8. set writable runtimme dan web/assets
-9. bower install blueimp-gallery
-10. bower install blueimp-canvas-to-blob
+5. composer global require "fxp/composer-asset-plugin:~1.1.1"
+6. composer update
+7. bower update

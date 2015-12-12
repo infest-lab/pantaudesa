@@ -105,13 +105,13 @@ class PantauController extends Controller
 
     public function actionTinjau(){
         $curl = new curl\Curl();
-        $response = $curl->get('http://localhost/lumbungku/index.php/api/keuangan/tahun');
+        $response = $curl->get('http://lumbungku.local/index.php/api/keuangan/tahun');
         return $this->renderPartial('ringkasan',['tahun'=>json_decode($response)]);
     }
 
     public function actionGetRingkasan($tahun){
         $curl = new curl\Curl();
-        $response = $curl->get('http://localhost/lumbungku/index.php/api/keuangan/ringkasan/tahun/2015');
+        $response = $curl->get('http://lumbungku.local/index.php/api/keuangan/ringkasan/tahun/2015');
         return $this->renderPartial('ringkasan_keuangan',['ringkasan'=> json_decode($response)], true, true);
     }
 

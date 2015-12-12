@@ -10,12 +10,12 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 class AngularAsset extends AssetBundle
-    {
-        public $sourcePath = '@bower/angular';
-        public $js = [
-            'angular.min.js',
-        ];
-        public $jsOptions = [
-		    'position' => \yii\web\View::POS_HEAD
-		];
-    }
+{
+    public $sourcePath = '@bower/angular';
+    public $js = [
+        'angular.min.js',
+    ];
+    public $jsOptions = [
+	    'position' => \yii\web\View::POS_HEAD
+	];
+}

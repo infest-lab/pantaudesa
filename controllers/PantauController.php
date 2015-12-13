@@ -9,12 +9,15 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use linslin\yii2\curl;
+use yii\helpers\Json;
+use yii\helpers\Url;
 
 /**
  * PantauController implements the CRUD actions for Pantau model.
  */
 class PantauController extends Controller
 {
+    public $enableCsrfValidation = false;
     public function behaviors()
     {
         return [
@@ -63,10 +66,42 @@ class PantauController extends Controller
     {
         $model = new Pantau();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => (string)$model->_id]);
+            //return $this->redirect(['view', 'id' => (string)$model->_id]);
+            echo Json::encode([
+                'status'=>'success',
+                'message'=>'Data berhasil disimpan.',
+                'redirect'=>Yii::$app->urlManager->createUrl(['pantau/view','id'=>(string)$model->_id]),
+                ]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+            ]);
+        }
+    }
+
+
+    public function actionSimpan()
+    {        
+        /*if(Yii::$app->request->isPost){
+          //  $model = new Pantau();
+            //print_r(Yii::$app->request->bodyParams);
+            $wilayah = Json::decode(Yii::$app->request->post('wilayah'));
+            //$post = Yii::$app->request->bodyParams;
+
+            print_r($wilayah);
+        }*/
+        $model = new Pantau();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            echo Json::encode([
+                'status'=>'success',
+                'message'=>'Data berhasil disimpan.',
+                'redirect'=>Url::to('/pantau/view/id/'.(string)$model->_id)
+                ]);
+        } else {
+            echo Json::encode([
+                'status'=>'error',
+                'message'=>'Data GAGAL disimpan.',
+                'data'=>$model->getErrors()
             ]);
         }
     }

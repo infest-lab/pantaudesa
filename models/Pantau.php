@@ -48,9 +48,9 @@ class Pantau extends \yii\mongodb\ActiveRecord
             'kode_desa',
             'desa',
             'is_kelurahan',
-            'periode',
-            'tahun',
-            'type',
+            //'periode',
+            //'tahun',
+            'method',
             'content',
             'alamat'
         ];
@@ -62,7 +62,8 @@ class Pantau extends \yii\mongodb\ActiveRecord
     public function rules()
     {
         return [
-            [['provinsi', 'kode_provinsi', 'kode_kabupaten', 'kabupaten', 'kode_kecamatan', 'kecamatan', 'kode_desa', 'desa', 'is_kelurahan', 'periode', 'tahun', 'type', 'content', 'alamat'], 'safe']
+            //[['provinsi', 'kode_provinsi', 'kode_kabupaten', 'kabupaten', 'kode_kecamatan', 'kecamatan', 'kode_desa', 'desa', 'is_kelurahan', 'periode', 'tahun', 'type', 'content', 'alamat'], 'safe']
+            [['provinsi', 'kode_provinsi', 'kode_kabupaten', 'kabupaten', 'kode_kecamatan', 'kecamatan', 'kode_desa', 'desa', 'is_kelurahan', 'method', 'content', 'alamat'], 'safe']
         ];
     }
 
@@ -82,9 +83,9 @@ class Pantau extends \yii\mongodb\ActiveRecord
             'kode_desa' => 'Kode Desa',
             'desa' => 'Desa',
             'is_kelurahan' => 'Is Kelurahan',
-            'periode' => 'Periode',
-            'tahun' => 'Tahun',
-            'type' => 'Type',
+            //'periode' => 'Periode',
+            //'tahun' => 'Tahun',
+            'method' => 'Method',
             'alamat'=> 'Alamat',
             'content' => 'Content',
         ];

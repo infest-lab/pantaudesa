@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9f66ba51791b5d41ef0d4a25335772d",
-    "content-hash": "51d53b6db7ba967acd2e6932678679b5",
+    "hash": "4ada158f6f719b7b61411bd86457911e",
+    "content-hash": "5294d406de2a7921a15e8b5d60e891a3",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -158,6 +158,40 @@
                 "bower-asset-main": "./angular.js",
                 "bower-asset-ignore": []
             }
+        },
+        {
+            "name": "bower-asset/angular-file-upload",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nervgh/angular-file-upload.git",
+                "reference": "f8c81dfa1eb6334a374ad3e976715492ab602dbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nervgh/angular-file-upload/zipball/f8c81dfa1eb6334a374ad3e976715492ab602dbc",
+                "reference": "f8c81dfa1eb6334a374ad3e976715492ab602dbc",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/angular": ">=1.1.5,<2.0.0"
+            },
+            "require-dev": {
+                "bower-asset/es5-shim": ">=3.4.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/angular-file-upload.min.js",
+                "bower-asset-ignore": [
+                    "examples"
+                ]
+            },
+            "keywords": [
+                "angular",
+                "file",
+                "module",
+                "upload"
+            ]
         },
         {
             "name": "bower-asset/blueimp-canvas-to-blob",

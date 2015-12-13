@@ -21,6 +21,7 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <?= Html::csrfMetaTags() ?>
     <script>var site_url = '<?php echo Url::base(true).Url::home(); ?>'</script>
 </head>
 <body>

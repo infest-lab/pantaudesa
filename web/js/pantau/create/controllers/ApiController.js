@@ -29,4 +29,12 @@ createPantauApp.controller('ApiController', ['$scope','$http', 'formCreate', fun
 		})
 	}
 
+	$scope.$watch('api_url', function(newValue, oldValue) {
+    	if (newValue === oldValue) {
+            return;
+        }
+        formCreate.setContent({url:newValue});
+      	//console.log(formCreate.getWilayah());
+   	});
+
 }])

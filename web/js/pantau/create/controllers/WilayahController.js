@@ -18,8 +18,19 @@ createPantauApp.controller('WilayahController', ['$scope','$http', 'formCreate',
         console.log($scope.formData);
         return false;
     };*/
+    $scope.wilayah = {
+		kode_desa: null,
+		desa: null,
+		kode_kecamatan: null,
+		kecamatan: null,
+		kode_kabupaten: null,
+		kabupaten: null,
+		kode_provinsi: null,
+		provinsi: null,
+		alamat: null,
+		is_kelurahan: null,
+	};
 
-    
     $scope.init = function(){
     	angular.extend($scope.config, formCreate.getConfig());
     	if(typeof $scope.config.url !== 'undefined'){
@@ -59,11 +70,21 @@ createPantauApp.controller('WilayahController', ['$scope','$http', 'formCreate',
 	$scope.getDesa = function(input){
 		var json = angular.fromJson(input)
 		$http.get($scope.config.url+'/wilayah/desa?kode='+json.kode_kecamatan, {}).then(function(data){
-			$scope.desas = data.data
+			$scope.desas = data.data;
+
+
 		}, function(error){
 			console.log(error);
 		});
 	}
+
+	$scope.$watchCollection('formData', function(newValue, oldValue) {
+    	if (newValue === oldValue) {
+            return;
+        }
+        formCreate.setWilayah(newValue);
+      	//console.log(formCreate.getWilayah());
+   	});
 	/*$scope.changeType = function(type){
 		console.log(type)
 		via()

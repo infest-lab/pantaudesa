@@ -61,3 +61,85 @@ Stack trace:
 2015/12/12 19:27:21 [error] 14084#0: *818 open() "/home/yat/webapps/pantau-desa/web/images/skema_pantaudesa.png" failed (13: Permission denied), client: 127.0.0.1, server: pantaudesa.local, request: "GET /images/skema_pantaudesa.png HTTP/1.1", host: "pantaudesa.local"
 2015/12/12 19:27:24 [error] 14084#0: *816 open() "/home/yat/webapps/pantau-desa/web/images/skema_pantaudesa.png" failed (13: Permission denied), client: 127.0.0.1, server: pantaudesa.local, request: "GET /images/skema_pantaudesa.png HTTP/1.1", host: "pantaudesa.local"
 2015/12/13 00:08:03 [error] 14082#0: *1149 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to a member function orderBy() on a non-object in /home/yat/webapps/pantau-desa/controllers/WilayahController.php on line 17" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "GET //wilayah/provinsi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/13 14:43:27 [error] 14082#0: *1954 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '?>' in /home/yat/webapps/pantau-desa/views/pantau/_form.php on line 215" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "GET /pantau/create HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local"
+2015/12/13 18:03:10 [error] 14083#0: *2270 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/yat/webapps/pantau-desa/controllers/UploadBerkasController.php on line 30" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /upload-berkas/upload HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/13 18:05:52 [error] 14083#0: *2272 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/yat/webapps/pantau-desa/controllers/UploadBerkasController.php on line 30" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /upload-berkas/upload HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/13 19:49:18 [error] 14083#0: *2451 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\models\Yii' not found in /home/yat/webapps/pantau-desa/models/UploadForm.php on line 24" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /upload-berkas/upload HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/13 20:22:16 [error] 14083#0: *2513 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\models\Yii' not found in /home/yat/webapps/pantau-desa/models/UploadForm.php on line 24" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /upload-berkas/upload HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/13 20:41:09 [error] 14083#0: *2533 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\models\Yii' not found in /home/yat/webapps/pantau-desa/models/UploadForm.php on line 24" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /upload-berkas/upload HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 03:45:03 [error] 14082#0: *2917 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/yat/webapps/pantau-desa/views/pantau/_form.php on line 22" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "GET /pantau/create HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local"
+2015/12/14 03:46:01 [error] 14082#0: *2917 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected ']' in /home/yat/webapps/pantau-desa/views/pantau/_form.php on line 22" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "GET /pantau/create HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local"
+2015/12/14 03:48:40 [error] 14082#0: *2936 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$enableCsrfValidation' (T_VARIABLE), expecting function (T_FUNCTION) in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 18" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "GET /pantau/create HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local"
+2015/12/14 03:48:40 [error] 14082#0: *2940 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$enableCsrfValidation' (T_VARIABLE), expecting function (T_FUNCTION) in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 18" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "GET /pantau/sizzle.min.map HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local"
+2015/12/14 03:48:57 [error] 14082#0: *2938 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:78
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(78): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 78, Array)
+#1 [internal function]: app\controllers\PantauController->actionSaveCreate()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('save-create', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/save-cre...', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\we...
+PHP message: PHP Fatal error:  Function name must be a string in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 78" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/save-create HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 03:50:20 [error] 14082#0: *2952 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:78
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(78): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 78, Array)
+#1 [internal function]: app\controllers\PantauController->actionSaveCreate()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('save-create', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/save-cre...', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\we...
+PHP message: PHP Fatal error:  Function name must be a string in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 78" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/save-create HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 03:52:00 [error] 14082#0: *2962 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:78
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(78): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 78, Array)
+#1 [internal function]: app\controllers\PantauController->actionSavecreate()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('savecreate', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/savecrea...', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\web...
+PHP message: PHP Fatal error:  Function name must be a string in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 78" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/savecreate HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 03:54:35 [error] 14082#0: *2972 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:80
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(80): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 80, Array)
+#1 [internal function]: app\controllers\PantauController->actionSavecreate()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('savecreate', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/savecrea...', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\web...
+PHP message: PHP Fatal error:  Function name must be a string in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 80" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/savecreate HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 03:56:00 [error] 14082#0: *2976 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:80
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(80): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 80, Array)
+#1 [internal function]: app\controllers\PantauController->actionSavecreate()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('savecreate', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/savecrea...', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\web...
+PHP message: PHP Fatal error:  Function name must be a string in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 78" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/savecreate HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 03:57:28 [error] 14082#0: *2984 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: app' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:80
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(80): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 80, Array)
+#1 [internal function]: app\controllers\PantauController->actionSimpan()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('simpan', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/simpan', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application-...
+PHP message: PHP Fatal error:  Function name must be a string in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 80" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/simpan HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 04:15:11 [error] 14082#0: *3036 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined method Yii::app() in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 82" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/simpan HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 04:50:21 [error] 14081#0: *3130 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'yii\base\ErrorException' with message 'Undefined variable: model' in /home/yat/webapps/pantau-desa/controllers/PantauController.php:92
+Stack trace:
+#0 /home/yat/webapps/pantau-desa/controllers/PantauController.php(92): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', '/home/yat/webap...', 92, Array)
+#1 [internal function]: app\controllers\PantauController->actionSimpan()
+#2 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#3 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('simpan', Array)
+#5 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('pantau/simpan', Array)
+#6 /home/yat/webapps/pantau-desa/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Applicatio...
+PHP message: PHP Fatal error:  Call to a member function load() on a non-object in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 78" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/simpan HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"
+2015/12/14 05:01:35 [error] 14081#0: *3148 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'app\controllers\Url' not found in /home/yat/webapps/pantau-desa/controllers/PantauController.php on line 97" while reading response header from upstream, client: 127.0.0.1, server: pantaudesa.local, request: "POST /pantau/simpan HTTP/1.1", upstream: "fastcgi://unix:/var/run/php5-fpm.sock:", host: "pantaudesa.local", referrer: "http://pantaudesa.local/pantau/create"

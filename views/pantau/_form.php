@@ -8,19 +8,23 @@ use yii\helpers\ArrayHelper;
 use app\models\Provinsi;
 use dosamigos\fileupload\FileUploadUI;
 use app\assets\AngularAsset;
-use app\assets\CreatePantauAsset;
+use app\assets\AngularFileUploadAsset;
 /* @var $this yii\web\View */
 /* @var $model app\models\Pantau */
 /* @var $form yii\widgets\ActiveForm */
 
-//app\assets\CreatePantauAsset::register($this);
+app\assets\AngularFileUploadAsset::register($this);
+
+//echo Yii::$app->urlManager->createUrl(['/pantau/view','id'=>'566dedb0cee1ccf7378b456a']);
 ?>
 
 <div class="pantau-form" ng-app="CreatePantu">
 
     <?php $form = ActiveForm::begin(); //['options'=> ['ng-submit'=> 'submit()']]?>
-    <?php $config = Json::encode(['url'=>Url::base(true).Url::home()]);?>
+    <?php $config = Json::encode(['url'=>Url::base(true).Url::home(),'saveUrl'=>Url::to('/pantau/simpan')]);?>
+    <!-- begin:MainController -->
     <div ng-controller="MainController" ng-init='init(<?=$config?>)'></div>
+    <!-- end:MainController -->
     <div class="row">
       <div class="col-md-5">
         <h3>Pilih Desa</h3>
@@ -71,9 +75,9 @@ use app\assets\CreatePantauAsset;
           <div class="hide">
               <?= $form->field($model, 'desa') ?>
           </div>
-          <?= $form->field($model, 'alamat')->textArea() ?>
+          <?= $form->field($model, 'alamat')->textArea(['ng-model'=>'formData.alamat']) ?>
 
-          <?= $form->field($model, 'is_kelurahan')->checkbox() ?>
+          <?= $form->field($model, 'is_kelurahan')->checkbox(['ng-model'=>'formData.is_kelurahan']) ?>
         </div>
         <!-- end:WilayahController -->
       </div>
@@ -187,64 +191,95 @@ use app\assets\CreatePantauAsset;
           <!-- end:ApiController -->
 
           <!-- begin:UploadController -->
-          <div ng-controller="UploadController">
-            <div ng-show="$parent.type == 'upload'">
-              <?= $form->field($model, 'periode') ?>
-              <?= $form->field($model, 'tahun') ?>
-              
-              <?= FileUploadUI::widget([
-         
-                'name' => 'file',
-                'url' => ['upload-berkas/upload'], // your url, this is just for demo purposes,
-                'options' => ['accept' => '*'],
-                'clientOptions' => [
-                    'maxFileSize' => 2000000
-                ],
-                // Also, you can specify jQuery-File-Upload events
-                // see: https://github.com/blueimp/jQuery-File-Upload/wiki/Options#processing-callback-options
-                'clientEvents' => [
-                    'fileuploaddone' => 'function(e, data) {
-                                            console.log(e);
-                                            console.log(data);
-                                        }',
-                    'fileuploadfail' => 'function(e, data) {
-                                            console.log(e);
-                                            console.log(data);
-                                        }',
-                ],
-                ]);?>
+          <div ng-controller="UploadController" ng-init="init('<?=Url::to('/upload-berkas/upload')?>')">            
+            <div ng-show="$parent.type == 'upload'" class="well">
+              <?//= $form->field($model, 'periode')->textInput(['ng-model'=>'formData.periode']) ?>
+              <?//= $form->field($model, 'tahun') ?>             
+              <h3><span class="glyphicon glyphicon-upload"></span> Unggah Berkas</h3><hr/>
+              <input type="file" nv-file-select uploader="uploader"/><br/>
+
+              <div class="form-group" style="margin-bottom: 40px">
+                <h3>Antrian Unggah</h3>
+                <p>Jumlah berkas: {{ uploader.queue.length }}</p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th width="50%">Nama Berkas</th>
+                            <th ng-show="uploader.isHTML5">Ukuran</th>
+                            <th ng-show="uploader.isHTML5">Proses</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in uploader.queue">
+                            <td><strong>{{ item.file.name }}</strong></td>
+                            <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+                            <td ng-show="uploader.isHTML5">
+                                <div class="progress" style="margin-bottom: 0;">
+                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                            </td>
+                            <td nowrap>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                    <span class="glyphicon glyphicon-upload"></span> Unggah
+                                </button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                    <span class="glyphicon glyphicon-ban-circle"></span> Batal
+                                </button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                    <span class="glyphicon glyphicon-trash"></span> Hapus
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div>
+                  <div>
+                      Proses antrian:
+                      <div class="progress" style="">
+                          <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
+                      <span class="glyphicon glyphicon-upload"></span> Unggah semua
+                  </button>
+                  <button type="button" class="btn btn-warning btn-s" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
+                      <span class="glyphicon glyphicon-ban-circle"></span> Batalkan semua
+                  </button>
+                  <button type="button" class="btn btn-danger btn-s" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
+                      <span class="glyphicon glyphicon-trash"></span> Hapus semua
+                  </button>
+                </div>
+              </div>              
             </div>
           </div>
           <!-- end:UploadController -->
 
         </div>
-        <!-- end:MethodController -->
-
+        <!-- end:MethodController -->        
       </div>
     </div>
+    <div class="form-group text-center" ng-controller="SaveController">
+        <hr/><br/><br/>
+        <button type="button" class="btn btn-lg btn-block btn-success" ng-click="simpanPantau()">Simpan</button>
+        <?//= Html::submitButton('Simpan', ['class' => $model->isNewRecord ? 'btn btn-lg btn-block btn-success' : 'btn btn-lg btn-block btn-primary']) ?>
+    </div>
+    
+    
 
-    
-    
     
 
     <?php ActiveForm::end(); ?>
     
-
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
-
-
-
-<?php 
-    //echo $this->registerJsFile('/js/angular.min.js');
-    //echo $this->registerJsFile('@bower/angularjs/angular.min.js');
-    //app\assets\AppAsset::publish('@bower/angularjs/angular.min.js');
-    //echo Yii::getAlias('@bower');    
-    
-    //echo $this->registerJsFile('/js/wilayah.js'); 
-    //echo $this->registerJsFile('/js/ringkasan.js'); 
-
+<?php    
     //Register JS files
     echo $this->registerJsFile('/js/pantau/create/app.js');
     echo $this->registerJsFile('/js/pantau/create/factory.js');
@@ -253,4 +288,5 @@ use app\assets\CreatePantauAsset;
     echo $this->registerJsFile('/js/pantau/create/controllers/MethodController.js');
     echo $this->registerJsFile('/js/pantau/create/controllers/ApiController.js');
     echo $this->registerJsFile('/js/pantau/create/controllers/UploadController.js');
+    echo $this->registerJsFile('/js/pantau/create/controllers/SaveController.js');
  ?>

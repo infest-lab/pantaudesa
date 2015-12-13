@@ -1,1 +1,1 @@
-var createPantauApp = angular.module('CreatePantu',[]);
+var createPantauApp = angular.module('CreatePantu',['angularFileUpload']);

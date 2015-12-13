@@ -1,5 +1,9 @@
 createPantauApp.factory('formCreate', function () {
-    var formData = {};
+    var formData = {
+        wilayah: null,
+        method: null,
+        content: null
+    };
     var config = {};
 
     return {
@@ -25,5 +29,23 @@ createPantauApp.factory('formCreate', function () {
             //You could also set specific attribute of the form data instead
             config = newConfig
         },
+        setWilayah: function(wilayah){
+            formData.wilayah = wilayah;
+        },
+        getWilayah: function(){
+            return formData.wilayah;
+        },
+        setMethod: function(method){
+            formData.method = method;
+        },
+        getMethod: function(){
+            return formData.method;
+        },
+        setContent: function(content){
+            formData.content = content;
+        },
+        getContent: function(){
+            return formData.content;
+        }
     };
 });

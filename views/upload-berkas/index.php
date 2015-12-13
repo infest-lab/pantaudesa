@@ -6,7 +6,7 @@
 
 <?php
 use yii\widgets\ActiveForm;
-echo Yii::$app->request->csrfParam;
+echo Yii::$app->request->csrfParam;echo '<br/><br/>---<br/>';
 echo Yii::$app->request->csrfToken;
 ?>
 <div ng-app="app"  ng-controller="ControllerUpload" >

@@ -21,5 +21,6 @@ class CreatePantauAsset extends AssetBundle
     ];
     public $depends = [
     	'app\assets\AngularAsset',
+    	'app\assets\AngularFileUploadAsset'
     ];
 }

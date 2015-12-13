@@ -23,6 +23,7 @@
     "angularjs": "~1.4.8",
     "blueimp-gallery": "~2.16.0",
     "blueimp-canvas-to-blob": "~2.2.2",
-    "blueimp-file-upload": "~9.11.2"
+    "blueimp-file-upload": "~9.11.2",
+    "angular-file-upload": "~2.2.0"
   }
 }

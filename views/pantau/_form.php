@@ -193,8 +193,8 @@ app\assets\AngularFileUploadAsset::register($this);
           <!-- begin:UploadController -->
           <div ng-controller="UploadController" ng-init="init('<?=Url::to('/upload-berkas/upload')?>')">            
             <div ng-show="$parent.type == 'upload'" class="well">
-              <?//= $form->field($model, 'periode')->textInput(['ng-model'=>'formData.periode']) ?>
-              <?//= $form->field($model, 'tahun') ?>             
+              <?php //= $form->field($model, 'periode')->textInput(['ng-model'=>'formData.periode']) ?>
+              <?php //= $form->field($model, 'tahun') ?>             
               <h3><span class="glyphicon glyphicon-upload"></span> Unggah Berkas</h3><hr/>
               <input type="file" nv-file-select uploader="uploader"/><br/>
 
@@ -270,7 +270,7 @@ app\assets\AngularFileUploadAsset::register($this);
     <div class="form-group text-center" ng-controller="SaveController">
         <hr/><br/><br/>
         <button type="button" class="btn btn-lg btn-block btn-success" ng-click="simpanPantau()">Simpan</button>
-        <?//= Html::submitButton('Simpan', ['class' => $model->isNewRecord ? 'btn btn-lg btn-block btn-success' : 'btn btn-lg btn-block btn-primary']) ?>
+        <?php //= Html::submitButton('Simpan', ['class' => $model->isNewRecord ? 'btn btn-lg btn-block btn-success' : 'btn btn-lg btn-block btn-primary']) ?>
     </div>
     
     

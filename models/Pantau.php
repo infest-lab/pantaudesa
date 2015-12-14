@@ -82,7 +82,7 @@ class Pantau extends \yii\mongodb\ActiveRecord
             'kecamatan' => 'Kecamatan',
             'kode_desa' => 'Kode Desa',
             'desa' => 'Desa',
-            'is_kelurahan' => 'Is Kelurahan',
+            'is_kelurahan' => 'Apakah Kelurahan',
             //'periode' => 'Periode',
             //'tahun' => 'Tahun',
             'method' => 'Method',

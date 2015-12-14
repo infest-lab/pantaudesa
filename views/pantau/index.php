@@ -14,7 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="heading-title">
         <h2><?= Html::encode($this->title) ?></h2>
     </div>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Buat Pantau Baru', ['create'], ['class' => 'btn btn-success']) ?>

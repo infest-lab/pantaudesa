@@ -11,10 +11,12 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="heading-title">
+        <h2><?= Html::encode($this->title) ?></h2>
+    </div>
 
-    <p>Please fill out the following fields to login:</p>
-
+    <p>Silahkan isi username dan password dengan benar pada form di bawah ini:</p>
+    <br>
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'options' => ['class' => 'form-horizontal'],

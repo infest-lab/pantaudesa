@@ -223,6 +223,20 @@ Version: 1.0;
     background-color: #5CB85C;
 }
 
+.heading-title h3{
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #444;
+}
+
+.heading-title h4{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.heading-title .glyphicon{ margin-right: 5px; }
+
 
 /*
 =======================

@@ -7,16 +7,17 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\SearchPantau */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pantaus';
+$this->title = 'Pantau';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pantau-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="heading-title">
+        <h2><?= Html::encode($this->title) ?></h2>
+    </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Pantau', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Buat Pantau Baru', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

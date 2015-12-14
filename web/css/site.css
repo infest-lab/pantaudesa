@@ -106,7 +106,9 @@ Version: 1.0;
 [TABLE OF CONTENT]
 ============================
 [1. NAVBAR]
-[1. HEADER]
+[2. HEADER]
+[3. FEATURED]
+
 */
 
 /*
@@ -114,7 +116,7 @@ Version: 1.0;
 [1. NAVBAR]
 =========================
 */
-.navbar{ background-color: #101010;     }
+.navbar{ background-color: #101010; }
 
 
 /*

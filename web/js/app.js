@@ -1,4 +1,4 @@
-  var app = angular.module('app',  ['ngFileUpload']);
+var app = angular.module('app',  ['ngFileUpload']);
 app.controller('ControllerUpload', ['$scope' , 'Upload' , function($scope , Upload){
      $scope.$watch('file', function (data) {
         if (typeof data != "undefined") {
@@ -15,7 +15,7 @@ app.controller('ControllerUpload', ['$scope' , 'Upload' , function($scope , Uplo
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
                 Upload.upload({
-                    url: 'http://localhost:8080/index.php/upload-berkas/index',
+                    url: 'http://pantaudesa.local/index.php/upload-berkas/upload',
                     fields: {
                        '_csrf': 'jos'
                     },

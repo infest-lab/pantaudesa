@@ -1,0 +1,29 @@
+{
+  "name": "pantau-desa",
+  "version": "0.0.1",
+  "authors": [
+    "Muhammad Khayat <khayat@infest.or.id>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "pantaudesa.id",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "angularjs": "~1.4.8",
+    "blueimp-gallery": "~2.16.0",
+    "blueimp-canvas-to-blob": "~2.2.2",
+    "blueimp-file-upload": "~9.11.2",
+    "angular-file-upload": "~2.2.0"
+  }
+}

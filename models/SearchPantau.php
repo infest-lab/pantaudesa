@@ -18,7 +18,7 @@ class SearchPantau extends Pantau
     public function rules()
     {
         return [
-            [['_id', 'provinsi', 'kode_provinsi', 'kode_kabupaten', 'kabupaten', 'kode_kecamatan', 'kecamatan', 'kode_desa', 'desa', 'is_kelurahan', 'periode', 'tahun', 'type', 'content'], 'safe'],
+            [['_id', 'provinsi', 'kode_provinsi', 'kode_kabupaten', 'kabupaten', 'kode_kecamatan', 'kecamatan', 'kode_desa', 'desa', 'is_kelurahan', 'method', 'content'], 'safe'],
         ];
     }
 
@@ -64,9 +64,7 @@ class SearchPantau extends Pantau
             ->andFilterWhere(['like', 'kode_desa', $this->kode_desa])
             ->andFilterWhere(['like', 'desa', $this->desa])
             ->andFilterWhere(['like', 'is_kelurahan', $this->is_kelurahan])
-            ->andFilterWhere(['like', 'periode', $this->periode])
-            ->andFilterWhere(['like', 'tahun', $this->tahun])
-            ->andFilterWhere(['like', 'type', $this->type])
+            ->andFilterWhere(['like', 'method', $this->method])
             ->andFilterWhere(['like', 'content', $this->content]);
 
         return $dataProvider;

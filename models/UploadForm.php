@@ -1,6 +1,6 @@
 <?php 
 namespace app\models;
-
+use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
 
@@ -9,19 +9,19 @@ class UploadForm extends Model
     /**
      * @var UploadedFile
      */
-    public $imageFile;
+    public $file;
 
     public function rules()
     {
         return [
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg , pdf , xls , doc , csv'],
+            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg, pdf, xls, doc, csv, docx, odt, ods'],
         ];
     }
 
     public function upload()
     {
         if ($this->validate()) {
-            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            $this->file->saveAs('uploads/'. $this->file->baseName . '.' . $this->file->extension);
             return true;
         } else {
             return false;

@@ -13,20 +13,20 @@ class WilayahController extends \yii\web\Controller
     {
         return $this->render('index');
     }
-     public function actionProvinsi(){
-    	$model = Provinsi::find()->all();
+    public function actionProvinsi(){
+    	$model = Provinsi::find()->orderBy('nama_provinsi')->all();
     	echo Json::encode($model);
     }
     public function actionKabupaten($kode){
-    	$model = Kabupaten::find()->where(['kode_provinsi'=> $kode])->all();
+    	$model = Kabupaten::find()->where(['kode_provinsi'=> $kode])->orderBy('nama_kabupaten')->all();
     	echo Json::encode($model);
     }
-     public function actionKecamatan($kode){
-    	$model = Kecamatan::find()->where(['kode_kabupaten'=> $kode])->all();
+    public function actionKecamatan($kode){
+    	$model = Kecamatan::find()->where(['kode_kabupaten'=> $kode])->orderBy('nama_kecamatan')->all();
     	echo Json::encode($model);
     }
-     public function actionDesa($kode){
-    	$model = Desa::find()->where(['kode_kecamatan'=> $kode])->all();
+    public function actionDesa($kode){
+    	$model = Desa::find()->where(['kode_kecamatan'=> $kode])->orderBy('nama_desa')->all();
     	echo Json::encode($model);
     }
 

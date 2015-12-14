@@ -1,0 +1,1 @@
+var createPantauApp = angular.module('CreatePantu',['angularFileUpload']);

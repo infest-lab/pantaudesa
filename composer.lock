@@ -9,21 +9,21 @@
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/2amigos/yii2-file-upload-widget.git",
-                "reference": "94c266ea8b44acec9c95873d0dd8ff339db609fd"
+                "reference": "2ecf63e5f47e429e95ab598391399e0ed03e716f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-file-upload-widget/zipball/94c266ea8b44acec9c95873d0dd8ff339db609fd",
-                "reference": "94c266ea8b44acec9c95873d0dd8ff339db609fd",
+                "url": "https://api.github.com/repos/2amigos/yii2-file-upload-widget/zipball/2ecf63e5f47e429e95ab598391399e0ed03e716f",
+                "reference": "2ecf63e5f47e429e95ab598391399e0ed03e716f",
                 "shasum": ""
             },
             "require": {
                 "2amigos/yii2-gallery-widget": "~1.0",
-                "bower-asset/blueimp-file-upload": "~9.9",
+                "bower-asset/blueimp-file-upload": "~9.9.0",
                 "yiisoft/yii2": "~2.0.0",
                 "yiisoft/yii2-bootstrap": "~2.0.0"
             },
@@ -72,24 +72,24 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2015-04-12 22:02:35"
+            "time": "2015-04-14 19:11:24"
         },
         {
             "name": "2amigos/yii2-gallery-widget",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/2amigos/yii2-gallery-widget.git",
-                "reference": "f488ad42081eace2a90e0640ac30903e7c09b431"
+                "reference": "77b82b4a4d33a5cb9013220ff843de75984e7e82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-gallery-widget/zipball/f488ad42081eace2a90e0640ac30903e7c09b431",
-                "reference": "f488ad42081eace2a90e0640ac30903e7c09b431",
+                "url": "https://api.github.com/repos/2amigos/yii2-gallery-widget/zipball/77b82b4a4d33a5cb9013220ff843de75984e7e82",
+                "reference": "77b82b4a4d33a5cb9013220ff843de75984e7e82",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/blueimp-gallery": "~2.15",
+                "bower-asset/blueimp-gallery": "~2.15.0",
                 "yiisoft/yii2": "~2.0.0"
             },
             "require-dev": {
@@ -137,7 +137,7 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2015-04-12 20:19:40"
+            "time": "2015-04-12 22:21:58"
         },
         {
             "name": "bower-asset/angular",
@@ -211,16 +211,16 @@
         },
         {
             "name": "bower-asset/blueimp-file-upload",
-            "version": "9.11.2",
+            "version": "9.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blueimp/jQuery-File-Upload.git",
-                "reference": "0ef967239037d2e477dfa057ccabbea055284395"
+                "reference": "ce33e8915c4e4b3e7930c9ed0ae45cf132944a88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/0ef967239037d2e477dfa057ccabbea055284395",
-                "reference": "0ef967239037d2e477dfa057ccabbea055284395",
+                "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/ce33e8915c4e4b3e7930c9ed0ae45cf132944a88",
+                "reference": "ce33e8915c4e4b3e7930c9ed0ae45cf132944a88",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,23 @@
             "type": "bower-asset-library",
             "extra": {
                 "bower-asset-main": [
-                    "js/jquery.fileupload.js"
+                    "css/jquery.fileupload.css",
+                    "css/jquery.fileupload-ui.css",
+                    "css/jquery.fileupload-noscript.css",
+                    "css/jquery.fileupload-ui-noscript.css",
+                    "js/cors/jquery.postmessage-transport.js",
+                    "js/cors/jquery.xdr-transport.js",
+                    "js/vendor/jquery.ui.widget.js",
+                    "js/jquery.fileupload.js",
+                    "js/jquery.fileupload-process.js",
+                    "js/jquery.fileupload-validate.js",
+                    "js/jquery.fileupload-image.js",
+                    "js/jquery.fileupload-audio.js",
+                    "js/jquery.fileupload-video.js",
+                    "js/jquery.fileupload-ui.js",
+                    "js/jquery.fileupload-jquery-ui.js",
+                    "js/jquery.fileupload-angular.js",
+                    "js/jquery.iframe-transport.js"
                 ],
                 "bower-asset-ignore": [
                     "/*.*",
@@ -246,10 +262,7 @@
                     "test"
                 ]
             },
-            "license": [
-                "MIT"
-            ],
-            "description": "File Upload widget with multiple file selection, drag&amp;drop support, progress bar, validation and preview images.",
+            "description": "File Upload widget with multiple file selection, drag&amp;drop support, progress bar, validation and preview images, audio and video for jQuery. Supports cross-domain, chunked and resumable file uploads. Works with any server-side platform (Google App Engine, PHP, Python, Ruby on Rails, Java, etc.) that supports standard HTML form file uploads.",
             "keywords": [
                 "bootstrap",
                 "chunk",
@@ -274,16 +287,16 @@
         },
         {
             "name": "bower-asset/blueimp-gallery",
-            "version": "2.16.0",
+            "version": "2.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blueimp/Gallery.git",
-                "reference": "c246cec607d7be9810941eccd45115f1f346e802"
+                "reference": "2b65bd364dd5945809f2eda61fb3eb4a0a6fa095"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/Gallery/zipball/c246cec607d7be9810941eccd45115f1f346e802",
-                "reference": "c246cec607d7be9810941eccd45115f1f346e802",
+                "url": "https://api.github.com/repos/blueimp/Gallery/zipball/2b65bd364dd5945809f2eda61fb3eb4a0a6fa095",
+                "reference": "2b65bd364dd5945809f2eda61fb3eb4a0a6fa095",
                 "shasum": ""
             },
             "type": "bower-asset-library",

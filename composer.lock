@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "56315a6fe7674d412d4d19fcc5bd9c5b",
+    "hash": "ab05595d07cb0f3bdf0e31c87f0e9519",
     "content-hash": "a7d9705bec727c87c9d16c99058795a7",
     "packages": [
         {
@@ -141,37 +141,19 @@
         },
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
-            "version": "2.2.0",
+            "version": "v2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blueimp/JavaScript-Canvas-to-Blob.git",
-                "reference": "b107a012d06bc4cb1ae93f4e1e9c64653814d6c4"
+                "reference": "9ec7a82c0e41bee4295dfa7564637cfdde7adee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Canvas-to-Blob/zipball/b107a012d06bc4cb1ae93f4e1e9c64653814d6c4",
-                "reference": "b107a012d06bc4cb1ae93f4e1e9c64653814d6c4",
+                "url": "https://api.github.com/repos/blueimp/JavaScript-Canvas-to-Blob/zipball/9ec7a82c0e41bee4295dfa7564637cfdde7adee4",
+                "reference": "9ec7a82c0e41bee4295dfa7564637cfdde7adee4",
                 "shasum": ""
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "js/canvas-to-blob.js",
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "test"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "JavaScript Canvas to Blob is a function to convert canvas elements into Blob objects.",
-            "keywords": [
-                "blob",
-                "canvas",
-                "conversion",
-                "convert",
-                "javascript"
-            ]
+            "type": "bower-asset-library"
         },
         {
             "name": "bower-asset/blueimp-file-upload",
@@ -370,37 +352,19 @@
         },
         {
             "name": "bower-asset/blueimp-tmpl",
-            "version": "2.5.5",
+            "version": "2.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blueimp/JavaScript-Templates.git",
-                "reference": "8e38f6913c547af5b7b7927df43b941e0ef63d64"
+                "reference": "91d3f6f859521d43d424ad44b191536db0b7168b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Templates/zipball/8e38f6913c547af5b7b7927df43b941e0ef63d64",
-                "reference": "8e38f6913c547af5b7b7927df43b941e0ef63d64",
+                "url": "https://api.github.com/repos/blueimp/JavaScript-Templates/zipball/91d3f6f859521d43d424ad44b191536db0b7168b",
+                "reference": "91d3f6f859521d43d424ad44b191536db0b7168b",
                 "shasum": ""
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": "js/tmpl.js",
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "css",
-                    "js/demo.js",
-                    "test"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "< 1KB lightweight, fast & powerful JavaScript templating engine with zero dependencies. Compatible with server-side environments like node.js, module loaders like RequireJS and all web browsers.",
-            "keywords": [
-                "javascript",
-                "templates",
-                "templating"
-            ]
+            "type": "bower-asset-library"
         },
         {
             "name": "bower-asset/bootstrap",

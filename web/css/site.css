@@ -91,6 +91,24 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
+.text-container{
+    display: block;
+    padding: 40px 0;
+}
+
+.text-desc{
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.text-desc span{
+    display: block;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
 /*
 ==========================
 [ PANTAU DESA THEME ]

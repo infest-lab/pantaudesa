@@ -63,12 +63,31 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" >
-              <div id="bd_belanja"></div>
-              <div id="jn_belanja"></div>
-              <div id="r_bd_belanja"></div>
-              <div id="r_js_belanja"></div>
-              <div id="sumber_dana"></div>
+          <div role="tabpanel" class="tab-pane active text-container" >
+            <div class="row">
+                <div class="col-sm-4">
+                    <canvas id="diagram" width="300" height="300"></canvas>
+                </div>
+                <!-- break -->
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div id="sumber_dana" class="text-desc"></div><br>
+                            <div id="bd_belanja" class="text-desc"></div>
+                            <div id="r_bd_belanja" class="text-desc"></div>
+                        </div>
+                        <!-- break -->
+                        <div class="col-sm-4">
+                            <div id="jn_belanja" class="text-desc"></div>
+                        </div>
+                        <!-- break -->
+                        <div class="col-sm-4">
+                            <div id="r_js_belanja" class="text-desc"></div>
+                        </div>
+                        <!-- break -->
+                    </div>
+                </div>
+            </div>
           </div>
         </div>
     <?php
@@ -106,11 +125,6 @@ $this->params['breadcrumbs'][] = $this->title;
       
     endif;
      ?>
-
-     
-
-     
-    <canvas id="diagram" width="300" height="300"></canvas>
 
 </div>
 
@@ -159,7 +173,7 @@ $this->registerJs("
                 if(data.bidang_belanja){
                     var htm = '';
                     $.each(data.bidang_belanja,function(i,row){
-                        htm += row.bidang + row.text;
+                        htm += row.bidang + '<span>' + row.text + '</span>';
                     });    
                     $('#bd_belanja').html(htm);
                 }
@@ -168,7 +182,7 @@ $this->registerJs("
                 if(data.jenis_belanja){
                     var htm = '';
                     $.each(data.jenis_belanja,function(i,row){
-                        htm += row.jenis + row.text;
+                        htm += row.jenis + '<span>' + row.text + '</span>';
                     });    
                      $('#jn_belanja').html(htm);
                 }
@@ -178,7 +192,7 @@ $this->registerJs("
                  if(data.r_bidang_belanja){
                     var htm = '';
                     $.each(data.r_bidang_belanja,function(i,row){
-                        htm += row.bidang + row.text;
+                        htm += row.bidang + '<span>' + row.text + '</span>';
                     });    
                     $('#r_bd_belanja').html(htm);
                 }
@@ -187,7 +201,7 @@ $this->registerJs("
                 if(data.r_jenis_belanja){
                     var htm = '';
                     $.each(data.r_jenis_belanja,function(i,row){
-                        htm += row.jenis + row.text;
+                        htm += row.jenis + '<span>' + row.text + '</span>';
                     });    
                     $('#r_jn_belanja').html(htm);
 
@@ -197,7 +211,7 @@ $this->registerJs("
                  if(data.sumber_dana){
                     var htm = '';
                     $.each(data.sumber_dana,function(i,row){
-                        htm += row.dana + row.text;
+                        htm += row.dana + '<span>' + row.text + '</span>';
                     });    
                     $('#sumber_dana').html(htm);
                 }

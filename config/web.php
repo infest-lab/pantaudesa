@@ -36,7 +36,9 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [],
+            'rules' => [
+                '<controller:\w+>/<id:\w+>' => '<controller>/view',
+            ],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

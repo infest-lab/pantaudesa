@@ -250,6 +250,11 @@ $this->registerJs("
     }
 
     function ringkasan(tahun){
+        $('#bd_belanja').html('')
+        $('#jn_belanja').html('')
+        $('#r_bd_belanja').html('')
+        $('#r_jn_belanja').html('')
+        $('#sumber_dana').html('')
         $.ajax({
             url: '".$url."/ringkasan/tahun/'+tahun,
             method :'GET',

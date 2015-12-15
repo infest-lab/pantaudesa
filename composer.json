@@ -24,7 +24,11 @@
         "linslin/yii2-curl": "*",
         "bower-asset/angular": ">=1.4.8",        
         "bower-asset/angular-file-upload": "^2.2",
+<<<<<<< HEAD
         "bower-asset/Chart.js": "^0.1.0"
+=======
+        "bower-asset/Chart-js": "^1.0"
+>>>>>>> origin/khayat
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

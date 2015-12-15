@@ -9,14 +9,17 @@ app\assets\ChartJsAsset::register($this);
 /* @var $model app\models\Pantau */
 
 $this->title = $model->desa;
+
 $this->params['breadcrumbs'][] = ['label' => 'Pantau', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pantau-view">
 
-    <h1>Desa <?= Html::encode($this->title) ?></h1>
+    <div class="heading-title">
+        <h2>Pantau Desa <?= Html::encode($model->desa); ?></h2>
+    </div>
 
-    <p>
+    <!-- <p>
         <?= Html::a('Update', ['update', 'id' => (string)$model->_id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => (string)$model->_id], [
             'class' => 'btn btn-danger',
@@ -25,27 +28,24 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
+    </p> -->
 
     <table class="table ">
         <tr>
-            <td>Desa</td>
+            <td><strong>Desa</strong></td>
             <td><?= Html::encode($model->desa); ?></td>
         </tr>
-        
         <tr>
-            <td>Kecamatan</td>
-            <td><?= Html::encode($model->kecamatan); ?></td>
+            <td width="20%"><strong>Provinsi</strong></td>
+            <td><?= Html::encode($model->provinsi); ?></td>
         </tr>
-
         <tr>
-            <td>Kabupaten </td>
+            <td><strong>Kabupaten</strong></td>
             <td><?= Html::encode($model->kabupaten); ?></td>
         </tr>
-
         <tr>
-            <td>Provinsi</td>
-            <td><?= Html::encode($model->provinsi); ?></td>
+            <td><strong>Kecamatan</strong></td>
+            <td><?= Html::encode($model->kecamatan); ?></td>
         </tr>
                 
     </table>
@@ -64,7 +64,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- Tab panes -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" >
-              {{tahun}}
+              <div id="bd_belanja"></div>
+              <div id="jn_belanja"></div>
+              <div id="r_bd_belanja"></div>
+              <div id="r_js_belanja"></div>
+              <div id="sumber_dana"></div>
           </div>
         </div>
     <?php
@@ -122,6 +126,7 @@ $this->registerJs("
         ringkasan(tahun);
         return false;
     });
+   
     function tahun(){
         $.ajax({
             url: '".$url."/tahun',
@@ -133,11 +138,12 @@ $this->registerJs("
                         console.log(row);
                         var cc = '';
                         if(i === 0){
-                           // cc = 'active';
+                           cc = 'active';
                         }
                           var html = '<li class=\"'+cc+'\"><a href=\"#\" data-id=\"'+row+'\">'+row+'</a></li>';  
                           $('#tabTahun').append(html);
                     })
+                    $('#tabTahun').find('.active').children('a').click();
                 }
             }
         })
@@ -151,36 +157,51 @@ $this->registerJs("
                 console.log(data);
                 /*RENCANA*/
                 if(data.bidang_belanja){
+                    var htm = '';
                     $.each(data.bidang_belanja,function(i,row){
-                        console.log(row);
+                        htm += row.bidang + row.text;
                     });    
+                    $('#bd_belanja').html(htm);
                 }
-                
+              
+
                 if(data.jenis_belanja){
+                    var htm = '';
                     $.each(data.jenis_belanja,function(i,row){
-                        console.log(row);
+                        htm += row.jenis + row.text;
                     });    
+                     $('#jn_belanja').html(htm);
                 }
+               
                 
                 /*realisasi*/
                  if(data.r_bidang_belanja){
+                    var htm = '';
                     $.each(data.r_bidang_belanja,function(i,row){
-                        console.log(row);
+                        htm += row.bidang + row.text;
                     });    
+                    $('#r_bd_belanja').html(htm);
                 }
                 
-                if(data.r_jenis_belanja){
-                    $.each(data.r_jenis_belanja,function(i,row){
-                        console.log(row);
-                    });    
-                }
 
+                if(data.r_jenis_belanja){
+                    var htm = '';
+                    $.each(data.r_jenis_belanja,function(i,row){
+                        htm += row.jenis + row.text;
+                    });    
+                    $('#r_jn_belanja').html(htm);
+
+                }
+               
                 /*sumberdana*/
                  if(data.sumber_dana){
+                    var htm = '';
                     $.each(data.sumber_dana,function(i,row){
-                        console.log(row);
+                        htm += row.dana + row.text;
                     });    
+                    $('#sumber_dana').html(htm);
                 }
+              
                 
                
 

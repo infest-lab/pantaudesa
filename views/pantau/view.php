@@ -6,15 +6,17 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Pantau */
 
-$this->title = $model->_id;
+$this->title = $model->desa;
 $this->params['breadcrumbs'][] = ['label' => 'Pantaus', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pantau-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="heading-title">
+        <h2>Pantau Desa <?= Html::encode($model->desa); ?></h2>
+    </div>
 
-    <p>
+    <!-- <p>
         <?= Html::a('Update', ['update', 'id' => (string)$model->_id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => (string)$model->_id], [
             'class' => 'btn btn-danger',
@@ -23,23 +25,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
+    </p> -->
 
     <table class="table ">
         <tr>
-            <td>Provinsi</td>
+            <td width="20%"><strong>Provinsi</strong></td>
             <td><?= Html::encode($model->provinsi); ?></td>
         </tr>
         <tr>
-            <td>Kabupaten </td>
+            <td><strong>Kabupaten</strong></td>
             <td><?= Html::encode($model->kabupaten); ?></td>
         </tr>
         <tr>
-            <td>Kecamatan</td>
+            <td><strong>Kecamatan</strong></td>
             <td><?= Html::encode($model->kecamatan); ?></td>
         </tr>
         <tr>
-            <td>Desa</td>
+            <td><strong>Desa</strong></td>
             <td><?= Html::encode($model->desa); ?></td>
         </tr>
     </table>

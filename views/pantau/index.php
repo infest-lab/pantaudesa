@@ -26,14 +26,17 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'_id',
-            'provinsi',
+           
             //'kode_provinsi',
             //'kode_kabupaten',
-            'kabupaten',
+            
             // 'kode_kecamatan',
-             'kecamatan',
+             
             // 'kode_desa',
-             'desa',
+            'desa',
+            'kecamatan',
+            'provinsi',
+            'kabupaten',
             // 'is_kelurahan',
             // 'periode',
             // 'tahun',

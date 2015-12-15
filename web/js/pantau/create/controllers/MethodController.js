@@ -2,6 +2,8 @@ createPantauApp.controller('MethodController', ['$scope','$http', 'formCreate', 
 	$scope.config = formCreate.getConfig();
 	$scope.type = 'url';
 
+	formCreate.setMethod($scope.type);
+	
 	$scope.$watch('type', function(newValue, oldValue) {
     	if (newValue === oldValue) {
             return;

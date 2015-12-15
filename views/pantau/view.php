@@ -24,7 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-    <?php print_r($model->content) ?>
+    <?php print_r($model->content); ?>
+    <?php var_dump($model->method); ?>
     <?php /*DetailView::widget([
         'model' => $model,
         'attributes' => [

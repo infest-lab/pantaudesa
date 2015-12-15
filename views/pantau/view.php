@@ -36,16 +36,16 @@ $this->params['breadcrumbs'][] = $this->title;
             <td><?= Html::encode($model->desa); ?></td>
         </tr>
         <tr>
-            <td width="20%"><strong>Provinsi</strong></td>
-            <td><?= Html::encode($model->provinsi); ?></td>
+            <td><strong>Kecamatan</strong></td>
+            <td><?= Html::encode($model->kecamatan); ?></td>
         </tr>
         <tr>
             <td><strong>Kabupaten</strong></td>
             <td><?= Html::encode($model->kabupaten); ?></td>
         </tr>
         <tr>
-            <td><strong>Kecamatan</strong></td>
-            <td><?= Html::encode($model->kecamatan); ?></td>
+            <td width="20%"><strong>Provinsi</strong></td>
+            <td><?= Html::encode($model->provinsi); ?></td>
         </tr>
                 
     </table>
@@ -358,7 +358,8 @@ $this->registerJs("
                         ic++;
                     });    
                     $('#r_jn_belanja').html(htm);  
-                     var ctx = $('#diagram_r_jn_belanja').get(0).getContext('2d');
+                    console.log(arr);
+                    var ctx = $('#diagram_r_jn_belanja').get(0).getContext('2d');
                     var myPieChart = new Chart(ctx).Pie(arr);
 
                 }

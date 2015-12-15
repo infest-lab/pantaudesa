@@ -166,21 +166,32 @@ $this->params['breadcrumbs'][] = $this->title;
                 //print_r($file);
                 $uri = Url::to('/uploads/'.$file['name']);
                 $uri = Url::base(true).$uri;
-                $dl = Html::a('Unduh', ['uploads/'.$file['name']],['class' => 'btn btn-primary']);
+                $dl = Html::a('Unduh', ['uploads/'.$file['name']],['class' => 'btn btn-primary btn-sm']);
                 if((strpos( $file['type'],'image')) !== false){
                     echo '<div class="col-xs-6 col-md-3">
                             <div class="thumbnail">
                               <img src="'.$uri.'" alt="'.$file['name'].'">
                               <div class="caption">
                                 <h3>'.$file['name'].'</h3>
-                                <p> ('.number_format($file["size"]/1024,"2").' KB ).</p>
+                                <p> ('.number_format($file["size"]/1024,"2").' KB)</p>
                                 <p>'.$dl.'</p>
                               </div>
                             </div>
                           </div>';
                 }
-                elseif((strpos( $file['type'],'image')) !== false){
-                    
+                else{
+                    echo '<div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                              <div class="preview-file">
+                                 <span class="glyphicon glyphicon-list-alt"></span>
+                              </div>
+                              <div class="caption">
+                                <h3>'.$file['name'].'</h3>
+                                <p> ('.number_format($file["size"]/1024,"2").' KB)</p>
+                                <p>'.$dl.'</p>
+                              </div>
+                            </div>
+                          </div>';
                 }
 
             }
@@ -188,7 +199,8 @@ $this->params['breadcrumbs'][] = $this->title;
         endif;
       
     endif;
-     ?>
+    //print_r($model);
+     ?>     
 
 </div>
 

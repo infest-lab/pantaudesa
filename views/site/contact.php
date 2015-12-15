@@ -12,7 +12,9 @@ $this->title = 'Hubungi Kami';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="heading-title">
+        <h2><?= Html::encode($this->title) ?></h2>
+    </div>
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
@@ -33,28 +35,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php else: ?>
         <div class="row">
-            <div class="col-md-6">
-                <address>
-                  <strong>Pantau Desa.</strong><br>
-                  Infest Yogyakarta<br>
-                  Jl. Veteran Gg. Janur Kuning No. 11A<br>
-                  Umbulharjo, Yogyakarta, DIY, Indonesia
-                  <abbr title="Phone">P:</abbr> (0274) 372-378
-                </address>
-
-                <address>
-                  <strong>INFEST</strong><br>
-                  <a href="mailto:#">info@infest.or.id</a>
-                </address>
-            </div>
-            <div class="col-md-6">
+            <div class="col-sm-5">
                 <p>
                     Jika anda mempunyai pertanyaan lain yang berhubungan dengan Pantau Desa, silakan mengisi isian form di bawah ini untuk terhubung dengan kami.
                     Terimakasih.
                 </p>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm-12">
 
                         <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
@@ -71,13 +59,29 @@ $this->params['breadcrumbs'][] = $this->title;
                             ]) ?>
 
                             <div class="form-group">
-                                <?= Html::submitButton('Kirim', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                                <?= Html::submitButton('Kirim pesan', ['class' => 'btn btn-primary btn-lg btn-block', 'name' => 'contact-button']) ?>
                             </div>
 
                         <?php ActiveForm::end(); ?>
 
                     </div>
                 </div>
+            </div>
+            <!-- break -->
+
+            <div class="col-sm-6 col-sm-offset-1">
+                <address>
+                  <strong>Pantau Desa.</strong><br>
+                  Infest Yogyakarta<br>
+                  Jl. Veteran Gg. Janur Kuning No. 11A<br>
+                  Umbulharjo, Yogyakarta, DIY, Indonesia
+                  <abbr title="Phone">P:</abbr> (0274) 372-378
+                </address>
+
+                <address>
+                  <strong>INFEST</strong><br>
+                  <a href="mailto:#">info@infest.or.id</a>
+                </address>
             </div>
         </div>
         

@@ -27,7 +27,9 @@ app\assets\AngularFileUploadAsset::register($this);
     <!-- end:MainController -->
     <div class="row">
       <div class="col-md-5">
-        <h3>Pilih Desa</h3>
+        <div class="heading-title">
+          <h3>Pilih Desa</h3>
+        </div>
         <!-- begin:WilayahController -->
         <div ng-controller="WilayahController" ng-init="init()">
           <div class="form-group ">
@@ -84,7 +86,9 @@ app\assets\AngularFileUploadAsset::register($this);
       <div class="col-md-7">
         <!-- begin:MethodController -->
         <div ng-controller="MethodController">
-          <h3>Pilih Cara</h3>
+          <div class="heading-title">
+            <h3>Pilih Cara</h3>
+          </div>
           <div class="form-group field-pantau-type">
             <label class="control-label" for="pantau-type">Type</label>
             <div id="pantau-type">
@@ -193,13 +197,17 @@ app\assets\AngularFileUploadAsset::register($this);
           <!-- begin:UploadController -->
           <div ng-controller="UploadController" ng-init="init('<?=Url::to('/upload-berkas/upload')?>')">            
             <div ng-show="$parent.type == 'upload'" class="well">
-              <?//= $form->field($model, 'periode')->textInput(['ng-model'=>'formData.periode']) ?>
-              <?//= $form->field($model, 'tahun') ?>             
-              <h3><span class="glyphicon glyphicon-upload"></span> Unggah Berkas</h3><hr/>
+              <?php //= $form->field($model, 'periode')->textInput(['ng-model'=>'formData.periode']) ?>
+              <?php //= $form->field($model, 'tahun') ?>             
+              <div class="heading-title">
+                <h4><span class="glyphicon glyphicon-cloud-upload"></span> Unggah Berkas</h4>
+              </div>
               <input type="file" nv-file-select uploader="uploader"/><br/>
 
               <div class="form-group" style="margin-bottom: 40px">
-                <h3>Antrian Unggah</h3>
+                <div class="heading-title">
+                  <h4><span class="glyphicon glyphicon-stats"></span> Antrian Unggah</h4>
+                </div>
                 <p>Jumlah berkas: {{ uploader.queue.length }}</p>
 
                 <table class="table">
@@ -270,7 +278,7 @@ app\assets\AngularFileUploadAsset::register($this);
     <div class="form-group text-center" ng-controller="SaveController">
         <hr/><br/><br/>
         <button type="button" class="btn btn-lg btn-block btn-success" ng-click="simpanPantau()">Simpan</button>
-        <?//= Html::submitButton('Simpan', ['class' => $model->isNewRecord ? 'btn btn-lg btn-block btn-success' : 'btn btn-lg btn-block btn-primary']) ?>
+        <?php //= Html::submitButton('Simpan', ['class' => $model->isNewRecord ? 'btn btn-lg btn-block btn-success' : 'btn btn-lg btn-block btn-primary']) ?>
     </div>
     
     

@@ -7,16 +7,16 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\SearchPantau */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pantaus';
+$this->title = 'Pantau';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pantau-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="heading-title">
+        <h2><?= Html::encode($this->title) ?></h2>
+    </div>
 
     <p>
-        <?= Html::a('Create Pantau', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Buat Pantau Baru', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,15 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            '_id',
+            //'_id',
             'provinsi',
-            'kode_provinsi',
-            'kode_kabupaten',
+            //'kode_provinsi',
+            //'kode_kabupaten',
             'kabupaten',
             // 'kode_kecamatan',
-            // 'kecamatan',
+             'kecamatan',
             // 'kode_desa',
-            // 'desa',
+             'desa',
             // 'is_kelurahan',
             // 'periode',
             // 'tahun',

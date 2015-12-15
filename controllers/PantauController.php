@@ -83,20 +83,12 @@ class PantauController extends Controller
 
     public function actionSimpan()
     {        
-        /*if(Yii::$app->request->isPost){
-          //  $model = new Pantau();
-            //print_r(Yii::$app->request->bodyParams);
-            $wilayah = Json::decode(Yii::$app->request->post('wilayah'));
-            //$post = Yii::$app->request->bodyParams;
-
-            print_r($wilayah);
-        }*/
         $model = new Pantau();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             echo Json::encode([
                 'status'=>'success',
                 'message'=>'Data berhasil disimpan.',
-                'redirect'=>Url::to('/pantau/view/id/'.(string)$model->_id)
+                'redirect'=>Url::to('/pantau/view/'.(string)$model->_id)
                 ]);
         } else {
             echo Json::encode([

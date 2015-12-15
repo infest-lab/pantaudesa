@@ -70,7 +70,7 @@ class PantauController extends Controller
             echo Json::encode([
                 'status'=>'success',
                 'message'=>'Data berhasil disimpan.',
-                'redirect'=>Yii::$app->urlManager->createUrl(['pantau/view','id'=>(string)$model->_id]),
+                'redirect'=>Yii::$app->urlManager->createUrl('pantau/view/'.(string)$model->_id),
                 ]);
         } else {
             return $this->render('create', [
@@ -95,7 +95,7 @@ class PantauController extends Controller
             echo Json::encode([
                 'status'=>'success',
                 'message'=>'Data berhasil disimpan.',
-                'redirect'=>Url::to('/pantau/view/id/'.(string)$model->_id)
+                'redirect'=>Url::to('/pantau/view/'.(string)$model->_id)
                 ]);
         } else {
             echo Json::encode([

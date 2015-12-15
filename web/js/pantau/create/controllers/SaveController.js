@@ -23,7 +23,7 @@ createPantauApp.controller('SaveController', ['$scope','$http', 'formCreate', fu
             console.log(data)
             if(data.status === 'success'){
                 //window.location.href = '/pantau/view?id='+data.data_id;
-                //window.location.href = data.redirect;
+                window.location.href = data.redirect;
             }
         })
     }

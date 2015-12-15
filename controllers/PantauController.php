@@ -67,6 +67,7 @@ class PantauController extends Controller
         $model = new Pantau();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             //return $this->redirect(['view', 'id' => (string)$model->_id]);
+            echo Yii::$app->urlManager->createUrl(['pantau/view','id'=>(string)$model->_id]);
             echo Json::encode([
                 'status'=>'success',
                 'message'=>'Data berhasil disimpan.',

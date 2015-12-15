@@ -77,9 +77,7 @@ app\assets\AngularFileUploadAsset::register($this);
           <div class="hide">
               <?= $form->field($model, 'desa') ?>
           </div>
-          <?//= $form->field($model, 'alamat')->textArea(['ng-model'=>'formData.alamat']) ?>
-
-          <?//= $form->field($model, 'is_kelurahan')->checkbox(['ng-model'=>'formData.is_kelurahan']) ?>
+          
         </div>
         <!-- end:WilayahController -->
       </div>

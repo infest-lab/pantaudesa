@@ -24,26 +24,62 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+
+    <table class="table ">
+        <tr>
+            <td>Provinsi</td>
+            <td><?= Html::encode($model->provinsi); ?></td>
+        </tr>
+        <tr>
+            <td>Kabupaten </td>
+            <td><?= Html::encode($model->kabupaten); ?></td>
+        </tr>
+        <tr>
+            <td>Kecamatan</td>
+            <td><?= Html::encode($model->kecamatan); ?></td>
+        </tr>
+        <tr>
+            <td>Desa</td>
+            <td><?= Html::encode($model->desa); ?></td>
+        </tr>
+    </table>
+
+    <?php 
+    if($model->method === 'url'):
+        if(isset($modal->content['url'])): 
+            echo $modal->content['url'];
+        endif;
+
+    else:
+
+    endif;
+     ?>
     <?php print_r($model->content); ?>
-    <?php var_dump($model->method); ?>
+    <pre> <?php print_r($model); ?> </pre>
+    <?php //print_r($model); ?>
+     
+  
+     
+     
+    
     <?php /*DetailView::widget([
         'model' => $model,
         'attributes' => [
-            '_id',
+            //'_id',
             'provinsi',
-            'kode_provinsi',
-            'kode_kabupaten',
+            //'kode_provinsi',
+            //'kode_kabupaten',
             'kabupaten',
-            'kode_kecamatan',
+            //'kode_kecamatan',
             'kecamatan',
-            'kode_desa',
+            //'kode_desa',
             'desa',
-            'is_kelurahan',
-            'periode',
-            'tahun',
-            'type',
+            //'is_kelurahan',
+            //'periode',
+            //'tahun',
+            //'type',
             
         ],
-    ])*/ ?>
+    ]) */?>
 
 </div>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	  	<title>chart.js example</title>  	  	
+	</head>
+	<body>
+		<h3>Chart.js example</h3>
+		<div id="donutChart"></div>
+		<script src="../components/raphael/raphael-min.js"></script>
+	  	<script src="../chart.js"></script>
+		<script>
+			//creates the graph but doesn't displays it
+		    var donut = new Donut({
+		        innerRadius : 170,
+		        outerRadius : 280,
+		        canvasSize : {
+		            width : 800,
+		            height : 800 },
+		        percentages : [75, 25],
+		        sectorClasses : ['negative', 'neutral'],
+		        mainText : '25%',
+		        secondaryText : 'Secondary',
+
+		        //not mandatory, default values assigned
+		        enableInteraction : true,
+		        htmlReceptorID : 'donutChart',
+		        mainTextClass : 'donutMainText',
+		        secondaryTextClass : 'donutSecondaryText',
+		        hasBlankSectors : false,
+		        id : 'ID1'
+		    });
+
+		    //display the graph
+		    donut.create();
+
+		    setTimeout(function() {
+		        //how to update the graph
+		        donut.update({
+		            //mandatory
+		            percentages : [50, 50],
+		            sectorClasses : ['negative', 'neutral'],
+		            //optional
+		            mainText : '40%',
+		            secondaryText : 'new secondary text'
+		        });
+		    }, 4000);
+		</script>	  	
+	</body>
+</html>

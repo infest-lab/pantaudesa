@@ -1,0 +1,20 @@
+[
+    {
+        "name": "bower-asset/chart.js",
+        "version": "0.1.0",
+        "version_normalized": "0.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/centralway/chart.js.git",
+            "reference": "0b2890929e3368d9d1dce60c44100c9543b9bfff"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/centralway/chart.js/zipball/0b2890929e3368d9d1dce60c44100c9543b9bfff",
+            "reference": "0b2890929e3368d9d1dce60c44100c9543b9bfff",
+            "shasum": ""
+        },
+        "type": "bower-asset-library",
+        "installation-source": "dist"
+    }
+]

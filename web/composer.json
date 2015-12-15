@@ -1,0 +1,5 @@
+{
+    "require": {
+        "bower-asset/chart.js": "^0.1.0"
+    }
+}

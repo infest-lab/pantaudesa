@@ -1,0 +1,35 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "491ae5d85176f68fcc1dd44e7ef7d48e",
+    "content-hash": "3c654b8401f2c777318075a5c293febe",
+    "packages": [
+        {
+            "name": "bower-asset/chart.js",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/centralway/chart.js.git",
+                "reference": "0b2890929e3368d9d1dce60c44100c9543b9bfff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/centralway/chart.js/zipball/0b2890929e3368d9d1dce60c44100c9543b9bfff",
+                "reference": "0b2890929e3368d9d1dce60c44100c9543b9bfff",
+                "shasum": ""
+            },
+            "type": "bower-asset-library"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

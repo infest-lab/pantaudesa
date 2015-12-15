@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4ada158f6f719b7b61411bd86457911e",
-    "content-hash": "5294d406de2a7921a15e8b5d60e891a3",
+    "hash": "7e6de53388162a152f948646c73ccca4",
+    "content-hash": "0c92c4879c2481ecd8cf6a5ea3ceade4",
     "packages": [
         {
             "name": "2amigos/yii2-file-upload-widget",
@@ -468,6 +468,22 @@
                 "responsive",
                 "web"
             ]
+        },
+        {
+            "name": "bower-asset/chart.js",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/centralway/chart.js.git",
+                "reference": "0b2890929e3368d9d1dce60c44100c9543b9bfff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/centralway/chart.js/zipball/0b2890929e3368d9d1dce60c44100c9543b9bfff",
+                "reference": "0b2890929e3368d9d1dce60c44100c9543b9bfff",
+                "shasum": ""
+            },
+            "type": "bower-asset-library"
         },
         {
             "name": "bower-asset/jquery",

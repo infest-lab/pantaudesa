@@ -72,16 +72,39 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="col-sm-8">
                     <div class="row">
                         <div class="col-sm-4">
-                            <div id="sumber_dana" class="text-desc"></div><br>
+                            <div class="heading-title">
+                                <h3>Besaran Berdasarkan Bidang</h3>
+                            </div>
                             <div id="bd_belanja" class="text-desc"></div>
-                            <div id="r_bd_belanja" class="text-desc"></div>
                         </div>
                         <!-- break -->
                         <div class="col-sm-4">
+                            <div class="heading-title">
+                                <h3>Besaran Berdasarkan Jenis Belanja</h3>
+                            </div>
                             <div id="jn_belanja" class="text-desc"></div>
                         </div>
                         <!-- break -->
                         <div class="col-sm-4">
+                            <div class="heading-title">
+                                <h3>Besaran BErdasarkan Sumber Dana</h3>
+                            </div>
+                            <div id="sumber_dana" class="text-desc"></div>
+                        </div>
+                        <!-- break -->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="heading-title">
+                                <h3>Besaran Realisasi Berdasarkan Bidang</h3>
+                            </div>
+                            <div id="r_bd_belanja" class="text-desc"></div>
+                        </div>
+                        <!-- break -->
+                        <div class="col-sm-4">
+                            <div class="heading-title">
+                                <h3>Besaran Realisasi Berdasarkan Jenis Belanja</h3>
+                            </div>
                             <div id="r_js_belanja" class="text-desc"></div>
                         </div>
                         <!-- break -->

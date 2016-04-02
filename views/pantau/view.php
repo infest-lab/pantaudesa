@@ -36,16 +36,16 @@ $this->params['breadcrumbs'][] = $this->title;
             <td><?= Html::encode($model->desa); ?></td>
         </tr>
         <tr>
-            <td width="20%"><strong>Provinsi</strong></td>
-            <td><?= Html::encode($model->provinsi); ?></td>
+            <td><strong>Kecamatan</strong></td>
+            <td><?= Html::encode($model->kecamatan); ?></td>
         </tr>
         <tr>
             <td><strong>Kabupaten</strong></td>
             <td><?= Html::encode($model->kabupaten); ?></td>
         </tr>
         <tr>
-            <td><strong>Kecamatan</strong></td>
-            <td><?= Html::encode($model->kecamatan); ?></td>
+            <td width="20%"><strong>Provinsi</strong></td>
+            <td><?= Html::encode($model->provinsi); ?></td>
         </tr>
                 
     </table>
@@ -66,10 +66,32 @@ $this->params['breadcrumbs'][] = $this->title;
           <div role="tabpanel" class="tab-pane active text-container" >
             <div class="row">
                 <div class="col-sm-4">
-                    <canvas id="diagram" width="300" height="300"></canvas>
+                    <div class="heading-title">
+                        <h3>Besaran Berdasarkan Bidang</h3>
+                    </div>
+                    <canvas id="diagram_bd_belanja" width="300" height="300"></canvas>
+                    <br>
+                    <div id="bd_belanja" class="text-desc"></div>
+                </div>
+                 <div class="col-sm-4">
+                    <div class="heading-title">
+                        <h3>Besaran Berdasarkan Jenis Belanja</h3>
+                    </div>
+                    <canvas id="diagram_jn_belanja" width="300" height="300"></canvas>
+                    <br>
+                    <div id="jn_belanja" class="text-desc"></div>
+                </div>
+                 <div class="col-sm-4">
+                    <div class="heading-title">
+                        <h3>Besaran Berdasarkan Sumber Dana</h3>
+                    </div>
+                    <canvas id="diagram_sumber_dana" width="300" height="300"></canvas>
+                    <br>
+                    <div id="sumber_dana" class="text-desc"></div>
                 </div>
                 <!-- break -->
-                <div class="col-sm-8">
+
+                <!-- <div class="col-sm-8">
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="heading-title">
@@ -77,21 +99,21 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                             <div id="bd_belanja" class="text-desc"></div>
                         </div>
-                        <!-- break -->
+                        break
                         <div class="col-sm-4">
                             <div class="heading-title">
                                 <h3>Besaran Berdasarkan Jenis Belanja</h3>
                             </div>
                             <div id="jn_belanja" class="text-desc"></div>
                         </div>
-                        <!-- break -->
+                        break
                         <div class="col-sm-4">
                             <div class="heading-title">
-                                <h3>Besaran BErdasarkan Sumber Dana</h3>
+                                <h3>Besaran Berdasarkan Sumber Dana</h3>
                             </div>
                             <div id="sumber_dana" class="text-desc"></div>
                         </div>
-                        <!-- break -->
+                        break
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
@@ -100,15 +122,34 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                             <div id="r_bd_belanja" class="text-desc"></div>
                         </div>
-                        <!-- break -->
+                        break
                         <div class="col-sm-4">
                             <div class="heading-title">
                                 <h3>Besaran Realisasi Berdasarkan Jenis Belanja</h3>
                             </div>
                             <div id="r_js_belanja" class="text-desc"></div>
                         </div>
-                        <!-- break -->
+                        break
                     </div>
+                </div> -->
+            </div>
+            <!-- break -->
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="heading-title">
+                        <h3>Besaran Realisasi Berdasarkan Bidang</h3>
+                    </div>
+                    <canvas id="diagram_r_bd_belanja" width="300" height="300"></canvas>
+                    <br>
+                    <div id="r_bd_belanja" class="text-desc"></div>
+                </div>
+                 <div class="col-sm-6">
+                    <div class="heading-title">
+                        <h3>Besaran Realisasi Berdasarkan Jenis Belanja</h3>
+                    </div>
+                    <canvas id="diagram_r_jn_belanja" width="300" height="300"></canvas>
+                    <br>
+                    <div id="r_jn_belanja" class="text-desc"></div>
                 </div>
             </div>
           </div>
@@ -125,21 +166,32 @@ $this->params['breadcrumbs'][] = $this->title;
                 //print_r($file);
                 $uri = Url::to('/uploads/'.$file['name']);
                 $uri = Url::base(true).$uri;
-                $dl = Html::a('Unduh', ['uploads/'.$file['name']],['class' => 'btn btn-primary']);
+                $dl = Html::a('Unduh', ['uploads/'.$file['name']],['class' => 'btn btn-primary btn-sm']);
                 if((strpos( $file['type'],'image')) !== false){
                     echo '<div class="col-xs-6 col-md-3">
                             <div class="thumbnail">
                               <img src="'.$uri.'" alt="'.$file['name'].'">
                               <div class="caption">
                                 <h3>'.$file['name'].'</h3>
-                                <p> ('.number_format($file["size"]/1024,"2").' KB ).</p>
+                                <p> ('.number_format($file["size"]/1024,"2").' KB)</p>
                                 <p>'.$dl.'</p>
                               </div>
                             </div>
                           </div>';
                 }
-                elseif((strpos( $file['type'],'image')) !== false){
-                    
+                else{
+                    echo '<div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                              <div class="preview-file">
+                                 <span class="glyphicon glyphicon-list-alt"></span>
+                              </div>
+                              <div class="caption">
+                                <h3>'.$file['name'].'</h3>
+                                <p> ('.number_format($file["size"]/1024,"2").' KB)</p>
+                                <p>'.$dl.'</p>
+                              </div>
+                            </div>
+                          </div>';
                 }
 
             }
@@ -147,13 +199,36 @@ $this->params['breadcrumbs'][] = $this->title;
         endif;
       
     endif;
-     ?>
+    //print_r($model);
+     ?>     
 
 </div>
 
 <?php 
  if($model->method === 'url'):
 $this->registerJs("
+    var color = [
+        {
+            color: '#ea6153',
+            highlight: '#c0392b'
+        },
+        {
+            color: '#3498db',
+            highlight: '#2980b9'
+        },
+        {
+            color: '#2ecc71',
+            highlight: '#2cc36b'
+        },
+        {
+            color: '#e67e22',
+            highlight: '#d35400'
+        },
+        {
+            color: '#9b59b6',
+            highlight: '#8e44ad'
+        },
+    ];
     tahun();
     $('#tabTahun').on('click','a',function(){
         var tahun = $(this).attr('data-id');
@@ -172,7 +247,7 @@ $this->registerJs("
                 console.log(data.tahun);
                 if(data.tahun){
                     $.each(data.tahun,function(i,row){
-                        console.log(row);
+                       
                         var cc = '';
                         if(i === 0){
                            cc = 'active';
@@ -187,6 +262,11 @@ $this->registerJs("
     }
 
     function ringkasan(tahun){
+        $('#bd_belanja').html('')
+        $('#jn_belanja').html('')
+        $('#r_bd_belanja').html('')
+        $('#r_jn_belanja').html('')
+        $('#sumber_dana').html('')
         $.ajax({
             url: '".$url."/ringkasan/tahun/'+tahun,
             method :'GET',
@@ -195,48 +275,116 @@ $this->registerJs("
                 /*RENCANA*/
                 if(data.bidang_belanja){
                     var htm = '';
+                    var arr = [];
+                    var ic = 0;
                     $.each(data.bidang_belanja,function(i,row){
-                        htm += row.bidang + '<span>' + row.text + '</span>';
+                        htm += row.bidang + '<span>' + row.text + '</span>';                      
+                        arr.push(
+                            {   
+                                value: row.total,
+                                color: color[ic]['color'],
+                                highlight: color[ic]['highlight'],
+                                label: row.bidang
+                            }
+                            );
+                        ic++;
                     });    
+
                     $('#bd_belanja').html(htm);
+                    var ctx = $('#diagram_bd_belanja').get(0).getContext('2d');
+                    var myPieChart = new Chart(ctx).Pie(arr);
                 }
               
 
                 if(data.jenis_belanja){
                     var htm = '';
+                    var arr = [] ;
+                    var ic = 0;
                     $.each(data.jenis_belanja,function(i,row){
                         htm += row.jenis + '<span>' + row.text + '</span>';
+                        arr.push(
+                            {   
+                                value: row.total,
+                                color: color[ic]['color'],
+                                highlight: color[ic]['highlight'],
+                                label: row.jenis
+                            }
+                            );
+                        ic++;
                     });    
                      $('#jn_belanja').html(htm);
+                    var ctx = $('#diagram_jn_belanja').get(0).getContext('2d');
+                    var myPieChart = new Chart(ctx).Pie(arr);
                 }
                
                 
                 /*realisasi*/
                  if(data.r_bidang_belanja){
                     var htm = '';
+                    var arr = [];
+                    var ic = 0;
                     $.each(data.r_bidang_belanja,function(i,row){
                         htm += row.bidang + '<span>' + row.text + '</span>';
+                        arr.push(
+                            {   
+                                value: row.total,
+                                color: color[ic]['color'],
+                                highlight: color[ic]['highlight'],
+                                label: row.bidang
+                            }
+                            );
+                        ic++;
                     });    
                     $('#r_bd_belanja').html(htm);
+                    var ctx = $('#diagram_r_bd_belanja').get(0).getContext('2d');
+                    var myPieChart = new Chart(ctx).Pie(arr);
                 }
                 
 
                 if(data.r_jenis_belanja){
                     var htm = '';
+                    var arr = [];
+                    var ic = 0;
                     $.each(data.r_jenis_belanja,function(i,row){
                         htm += row.jenis + '<span>' + row.text + '</span>';
+                        arr.push(
+                            {   
+                                value: row.total,
+                                color: color[ic]['color'],
+                                highlight: color[ic]['highlight'],
+                                label: row.jenis
+                            }
+                            );
+                        ic++;
                     });    
-                    $('#r_jn_belanja').html(htm);
+                    $('#r_jn_belanja').html(htm);  
+                    console.log(arr);
+                    var ctx = $('#diagram_r_jn_belanja').get(0).getContext('2d');
+                    var myPieChart = new Chart(ctx).Pie(arr);
 
                 }
                
                 /*sumberdana*/
                  if(data.sumber_dana){
                     var htm = '';
+                    var arr = [];
+                    var ic = 0;
                     $.each(data.sumber_dana,function(i,row){
                         htm += row.dana + '<span>' + row.text + '</span>';
-                    });    
+                        arr.push(
+                            {   
+                                value: row.total,
+                                color: color[i]['color'],
+                                highlight: color[i]['highlight'],
+                                label: row.dana
+                            }
+                            );
+                        ic++;
+                    });
+
                     $('#sumber_dana').html(htm);
+                     var ctx = $('#diagram_sumber_dana').get(0).getContext('2d');
+                    var myPieChart = new Chart(ctx).Pie(arr);
                 }
               
                 
@@ -246,29 +394,7 @@ $this->registerJs("
         })
     }
 
-    var data = [
-        {
-            value: 300,
-            color: '#F7464A',
-            highlight: '#FF5A5E',
-            label: 'Red'
-        },
-        {
-            value: 50,
-            color: '#46BFBD',
-            highlight: '#5AD3D1',
-            label: 'Green'
-        },
-        {
-            value: 100,
-            color: '#FDB45C',
-            highlight: '#FFC870',
-            label: 'Yellow'
-        }
-    ]
-
-    var ctx = $('#diagram').get(0).getContext('2d');
-    var myPieChart = new Chart(ctx).Pie(data);
+        
 
     ");
 

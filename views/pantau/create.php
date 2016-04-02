@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Pantau */
 
 $this->title = 'Buat Pantau Baru';
-$this->params['breadcrumbs'][] = ['label' => 'Pantaus', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Pantau', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 app\assets\AngularAsset::register($this);

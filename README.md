@@ -1,3 +1,23 @@
+# pantaudesa
+Inisiatif Open Data Desa (kependudukan, keuangan, kesejahteraan)
+
+Requirements
+============
+* Yii Framework
+* Mongo DB
+* MySQL
+* Composer (dependensi tercantum di composer.json)
+
+Instalasi
+=========
+1. install composer
+2. apt-get install php5-dev php5-pear
+3. pecl install mongodb
+4. Edit /etc/php5/cli/php.ini tambahkan extension=mongo.so
+5. composer global require "fxp/composer-asset-plugin:~1.1.1"
+6. composer update
+7. bower update
+
 Yii 2 Basic Project Template
 ============================
 
@@ -89,7 +109,7 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=pantaudesa',
     'username' => 'root',
     'password' => '1234',
     'charset' => 'utf8',

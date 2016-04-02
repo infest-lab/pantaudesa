@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # phpstorm project files
 .idea
 
@@ -29,3 +30,11 @@ phpunit.phar
 /web/uploads
 /config/db.php
 /log
+=======
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
+>>>>>>> cc6fede5d6a453e50a7c1c528f8bb07ebe4a430e
